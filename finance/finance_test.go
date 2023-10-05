@@ -30,3 +30,12 @@ func TestCalculateStandardDeviation(t *testing.T) {
 		t.Fail()
 	}
 }
+
+func TestMaskCreditCardNumber(t *testing.T) {
+	var want string = "************3456"
+	got := MaskCreditCardNumber("1234567890123456")
+
+	if want != got {
+		t.Fail()
+	}
+}

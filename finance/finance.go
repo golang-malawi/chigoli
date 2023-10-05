@@ -2,6 +2,7 @@ package finance
 
 import (
 	math "math"
+	strings "strings"
 )
 
 // CalculateCompoundInterest calculates the compound interest for a given principal, rate, and years.
@@ -38,3 +39,12 @@ func CalculateMean(data []float64) float64 {
     }
     return sum / float64(len(data))
 }
+
+// MaskCreditCardNumber masks all but the last four digits of a credit card number.
+// cardNumber: the credit card number
+func MaskCreditCardNumber(cardNumber string) string {
+    visibleDigits := 4
+    masked := strings.Repeat("*", len(cardNumber)-visibleDigits) + cardNumber[len(cardNumber)-visibleDigits:]
+    return masked
+}
+
