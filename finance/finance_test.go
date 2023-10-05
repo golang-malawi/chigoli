@@ -12,3 +12,12 @@ func TestCalculateCompoundInterest(t *testing.T) {
 		t.Fail()
 	}
 }
+
+func TestCalculateROI(t *testing.T) {
+	var want float64 = 20
+	got := CalculateROI(10000, 12000)
+
+	if want != got {
+		t.Fail()
+	}
+}
