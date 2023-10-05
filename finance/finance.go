@@ -18,3 +18,23 @@ func CalculateCompoundInterest(principal float64, rate float64, years int) float
 func CalculateROI(initialInvestment float64, finalValue float64) float64 {
     return ((finalValue - initialInvestment) / initialInvestment) * 100
 }
+
+// CalculateStandardDeviation calculates the standard deviation for a given set of data.
+// data: the data set
+func CalculateStandardDeviation(data []float64) float64 {
+    mean := CalculateMean(data)
+    variance := 0.0
+    for _, num := range data {
+        variance += math.Pow(num-mean, 2)
+    }
+    variance /= float64(len(data))
+    return math.Sqrt(variance)
+}
+
+func CalculateMean(data []float64) float64 {
+    sum := 0.0
+    for _, num := range data {
+        sum += num
+    }
+    return sum / float64(len(data))
+}

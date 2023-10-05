@@ -21,3 +21,12 @@ func TestCalculateROI(t *testing.T) {
 		t.Fail()
 	}
 }
+
+func TestCalculateStandardDeviation(t *testing.T) {
+	var want float64 = 0.816496580927726
+	got := CalculateStandardDeviation([]float64{1, 2, 3})
+
+	if want != got {
+		t.Fail()
+	}
+}
